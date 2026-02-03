@@ -1,0 +1,104 @@
+.FF.EE.E.FE.EE...
+======================================================================
+ERROR: testDivide2 (__main__.TestCalc.testDivide2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 36, in testDivide2
+    self.assertEqual(2, source.performDivide(6, '3'), "Bug in code, check please!")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/source.py", line 74, in performDivide
+    return a / b
+           ~~^~~
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+
+======================================================================
+ERROR: testDivide3 (__main__.TestCalc.testDivide3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 39, in testDivide3
+    self.assertEqual(DIVBYZEROERROR, source.performDivide(6, 0), "Bug in code, check please!")
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/source.py", line 74, in performDivide
+    return a / b
+           ~~^~~
+ZeroDivisionError: division by zero
+
+======================================================================
+ERROR: testDivide5 (__main__.TestCalc.testDivide5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 45, in testDivide5
+    self.assertEqual(DIVBYZEROERROR, source.performDivide(3, '0'), "Bug in code, check please!")
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/source.py", line 74, in performDivide
+    return a / b
+           ~~^~~
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+
+======================================================================
+ERROR: testMultiply3 (__main__.TestCalc.testMultiply3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 30, in testMultiply3
+    self.assertEqual(FLOATERROR, source.performMultiply('ABC', '3.5'), "Bug in code, check please!")
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/source.py", line 66, in performMultiply
+    return a * b
+           ~~^~~
+TypeError: can't multiply sequence by non-int of type 'str'
+
+======================================================================
+ERROR: testSquareRoot2 (__main__.TestCalc.testSquareRoot2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 51, in testSquareRoot2
+    self.assertEqual(2, source.performSquareRoot('4'), 'Bug in code, check please!')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/source.py", line 59, in performSquareRoot
+    return a ** 0.5
+           ~~^^~~~~
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'float'
+
+======================================================================
+ERROR: testSquareRoot3 (__main__.TestCalc.testSquareRoot3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 54, in testSquareRoot3
+    self.assertEqual(FLOATERROR, source.performSquareRoot('4A'), 'Bug in code, check please!')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/source.py", line 59, in performSquareRoot
+    return a ** 0.5
+           ~~^^~~~~
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'float'
+
+======================================================================
+FAIL: testAdd2 (__main__.TestCalc.testAdd2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 18, in testAdd2
+    self.assertEqual(3.5, source.performAdd('1.5', '2.0'), "Bug in code, check please!")
+AssertionError: 3.5 != '1.52.0' : Bug in code, check please!
+
+======================================================================
+FAIL: testAdd3 (__main__.TestCalc.testAdd3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 21, in testAdd3
+    self.assertEqual(FLOATERROR, source.performAdd('1.5', '2.0!'), "Bug in code, check please!")
+AssertionError: 'error: not a float or int' != '1.52.0!'
+- error: not a float or int
++ 1.52.0!
+ : Bug in code, check please!
+
+======================================================================
+FAIL: testMultiply2 (__main__.TestCalc.testMultiply2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/clayramey/Documents/2025/Spring 26/sqa/worshop1/test.py", line 27, in testMultiply2
+    self.assertEqual(6, source.performMultiply('2', 3), "Bug in code, check please!")
+AssertionError: 6 != '222' : Bug in code, check please!
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.002s
+
+FAILED (failures=3, errors=6)
