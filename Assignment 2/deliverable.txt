@@ -1,0 +1,24 @@
+Assignment 2
+COMP 5710
+02/09/2026
+
+* Bandit Scan *
+The scan covered 3,401 lines of code in Python files that came from the workshop2.zip file. 
+It identified 52 total issues.
+
+
+* Three Most Frequent Security Weaknesses *
+
+1. B101: assert_used - had 30 occurrences of low severity
+The code uses assert all over the place to check conditions. The problem is
+that assert gets removed if Python runs with the -O flag, so those checks
+will just vanish.
+
+2. B311: random - had 7 occurrences of low severity
+The code uses Python's built-in random module in several spots. Random
+isn't safe for security, so it shouldn't be used for things like generating
+tokens or keys.
+
+3. B614: pytorch_load - had 5 occurrences of medium severity
+torch.load() uses pickle to load model files, and if someone swaps in a
+malicious file it could run unwanted code on your machine when loaded.
