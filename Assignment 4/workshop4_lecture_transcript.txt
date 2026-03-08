@@ -1,0 +1,307 @@
+Today, this is the workshop 4 for you and the workshop name is Resilient Automated Configuration
+Management. And before I'm going through all of the details, me show you something. This is the
+file, okay? This is a very blank file. It has nothing. So now you are writing a variable called
+name. And under the variable, you are putting the name of the . And you are also writing the
+password over there. Now, unfortunately, what you have done, you have also said the password is
+1234. And if somebody has access to this file, he got to know that the username is and the password
+is 1234. What is the main problem that you have found here? The main problem is that somebody has
+hardcoded the password. The password is not encrypted. So if somehow the hacker or somebody else who
+don't have the access to this file, get the access to this file and the password is cracked. Now
+what could be a potential solution for that? The potential solution could be the password 1234 could
+be encrypted. or could be encoded or may the password should never be here. So these are the three
+potential options that you have. So instead of directly writing the password over here, you could
+have three options. Either you could encode the password. Encoding means one two three four will
+become something like very random V, something like this. So that is completely bogus. That means
+somebody even have access to this file. They go to say that VIGT. So it can understand whether it
+belongs to the one two three four or not. Or encrypted means you're trying to encrypt them. Or some
+things like this, you put the password into an ENV file, and under the ENV file, you set all of the
+parameters your particular program should require to run. So now if somebody asks you, how can I
+understand whether somebody has hardcoded this kind of confidential information into our system?
+Since this specific file is very simple, it only has the two lines. So by using, you and me can
+easily identify or understand, okay, this is one, two, three, four, that is confidential and
+shouldn't be there. But if this is a thousands line program or millions of lines program, that it
+will become difficult for you and me to identify and understand what exactly is there. And that's
+why over the past years, even the last 10 to 15 years, the researcher, the developers, or the
+security engineers are trying to identify or develop some kind of tools those tools can easily
+identify and detect this kind of hard-coded credentials. Or some kind of credentials, those should
+not be there into your configuration management. And today's class is all about this, where one of
+the developers has designed a tool that could identify or understand this kind of credentials into a
+configuration file. And from there, it will report you back that what kind of security
+vulnerabilities that it has found. And in a simple term, we call it the misconfiguration. Something
+that should not be there, it's been there. This is called the misconfiguration. And there's the
+project all about the workshop 4. The workshop 4 is very simple to understand. It requires only
+three to four lines. Nothing require coding over here. Just the three to four command and your
+program or your workshop or assignment is going to be ready. So workshop 4, we call it the resilient
+automated management. And that is something connected to the Kubernetes. I don't know whether you
+heard about the Kubernetes before or not, but suppose you have an application called avc.com. When
+you have this application, you have three options to deploy this application. You take a simple VM
+into AWS and then deploy your application. That is option number one. There are multiple options
+could be. You can say that, OK, I'm not going to go for the AWS VM. I'm going to go for the GCP,
+Google Cloud VM. Then you can also take a VM into the GCP and deploy your application over there.
+And suppose somehow the VM that you have selected into the AWS and the GCP has a maximum capacity of
+100 user. That means at a single time concurrently 100 user can access your system. And if that is
+the 100 plus 1th user, what will happen to the 100 1th user? He's going to be in the queue. He's
+going to be in the waiting list. That means if somebody of this 100 user that doesn't log out from
+your system, the 101th user cannot access to your system, that is kind of waiting time. So this user
+has to be waiting. Now that is not a good solution then, because I want every user, doesn't matter
+whoever it is, this is the 100th user or the 10,000th user, they should gain access to our system.
+Then we can say that the system is reliable, system is readily available. Right now, the
+architecture or simple application that you have deployed into the AWS or GCP is not scalable. That
+means the user is going to be into the waiting state. If Netflix has been designed in like this, and
+if you're trying to enjoy the movie of Game of Thrones or something, Genie and Georgia, then
+definitely you're not going to like this. Nobody wants to be in the waiting list. And what could be
+other solution then? Then in 2015, Google was trying to solve this problem. They came up with
+something. They call it scalable solution. And they named it Kubernetes. He said that, okay, when
+you have your application, avc.com, simply wrap it into a folder. Here we call the folder a
+container. Later, ship that container. into a tiny VM. Now suppose this VM has a capacity of 100
+users and can access. If somehow the user number raises. That means the 100 users become 10,000
+users. Then the Kubernetes will automatically create another VM of that application. Now suppose one
+VM can handle 100 requests, and you have 10,000 users right now trying to access your system. How
+many VMs are you going to require? It's going to require 100 VMs. And as a developer, you don't need
+to do anything. You just set the application into the Kubernetes, and Kubernetes is going to be
+handling everything. Now suppose what will happen at 10 a.m., you have 100 users, and at 10.50, you
+have 10,000 users, and 11 a.m., it again reduced back to the 100 user. Now the system will
+automatically identify how many VMs it will require, how many containers it's going to require. It
+will scale up and then scale down. That is called the automation. That is called the resiliency.
+That means it doesn't matter whether you have the millions of users or not. It will automatically
+detect the traffic. It will automatically make sure your application is always available. We call it
+Reliable Solution and Scalable Solution. And this is going to be your first interview question
+whenever you're applying for any kind of job, software engineering job or something else. Software
+engineering jobs, DevOps engineering job, any other job that you're going to be applying for. If
+somebody is trying to give you access to their terminal and to help you to design an application,
+they're going to be scalable. Then you have to answer that. If you're simply saying that I have my
+application, I'm going to deploy it into the VM, that doesn't work. You have to identify that the
+current scenario, the current user basis is extremely large and unpredictable. We don't know how
+many users are going to be in the next second. So we have to design our application in such a way
+that it doesn't matter how many users we're going to have. In the unforeseen event, it is always
+ready to scale up and it is always ready to scale down to make sure that the budget of your
+application doesn't exit. So you have to make sure your application is scalable. At the same time,
+the company is going to set a budget constraint. For this application, I'm not going to spend more
+than $1,000 per month. You have to adjust your application, and it's deployed within this
+constraint. So that is the workshop 4. Just go through all of the details. The workshop 4 required
+three. What are the requirements? for this Oxford 4. to run. Make sure you have Docker installed. So
+I have my Docker over here. So I'm using the Mac. So if you're using Windows, try to make sure the
+Docker is running. You can install the Docker through the terminal. I'm using the Docker desktop. So
+just try to download the Docker. And after you have downloaded the Docker, make sure the Docker is
+running or not. Run this command, docker ps. It will show that the Docker is successfully running.
+Now the question is, second part. As I mentioned that uh somebody has developed some kind of tools
+which can easily identify whether is any kind of security solutions or something, this kind of
+credentials is hard coded or not, of any kind of misconfigurations are there. And for this, there is
+a tool. This tool is available here. We try to download this tool. then we need to run this tool. on
+the, suppose that file password dot txt that is specific file, it could be a folder. It could be a
+giant folder. Project directory. So it could be anything. It is the target you could set for. The
+first part is the docker instance installed. Second part, we need to download this tool. The third
+part is to run this tool on the specific directory or the folders or anything that could be there.
+Now the question is, what are the misconfigurations look like for this specific project? Under this
+specific project, you'll find a directory called kubectl master. Just go there. And under this
+kubectl master, you'll find a folder called test artifact, that means that is the target folder on
+which you have to run this tool, against which. And there are lots of different artifact. Suppose
+password.txt is an artifact. Simply, in the case of the Kubernetes, we define the artifact using a
+simple extension. That extension is called YAML. Yet another markup language. That is the extension.
+So see, Let's see the first extension, allow.privilege.yaml. So here is C. So that is a
+configuration. So when you run your application against this configuration, it will try to check
+whether this kind of configuration has anything hardcoded or security being exposed over here. If
+nothing is found, it's reporting zero misconfiguration found. If one misconfiguration found, it will
+report search. two misconfiguration found, it will report two misconfiguration found. Now, did you
+see any misconfiguration over here in this specific configuration file? Is anything hardcoded? No.
+But there could be something missing. We really don't know because we're not expert of the
+Kubernetes. So we'll let the tool that somebody has designed for us to detect it and give it back
+what they have found inside it. Similarly, this is another configuration C. the configuration file
+is going to be high. Number of lines is larger. Earlier, it is 10 lines. Now it becomes 44 lines.
+There is another configuration file, which is even larger, even bigger, the 125. Now, if you are a
+simple human being is going through all of these files, it becomes a headache for you. You're going
+to die. There's lots of things that you can identify and understand. So what we are going to do,
+we're going to follow the instructions over here. into the github repo you will find that repo
+inside your git project that the professor might have shared with you then first thing that you are
+going to run is this command you can skip this two command no need to run this thing so what you are
+going to do you are going to pull that tool that means you have to first download that tool into
+your local machine Let's see. Let me try to download this tool into my local machine. Okay. It is
+downloaded. Then you have to check whether it's really been downloaded or not. Docker images. I have
+lots of different tools over there. So that is the tool that we are working on, the SLI Q. So the
+tool is being downloaded. And the next part is to check. We already run it. And to check the tools,
+we call it the images. So we just need to run the docker image minus a hyphen a means all. List me
+all of the images that I have in my local machine. Now you have to run this file. That is the point
+where you are trying to enter into the tool and run the tool against the target file. on which you
+have to find out all of the misconfigurations. try to run this tool. we are into the tool right now.
+So earlier, I was in my local machine. When I just run the tool and we enters into a docker machine.
+That means we can say that the tool is now running. And that's why it is saying that root at the
+rate that is the, if this is my local machine, it's going to be root at the rate local machine.
+Since this is a Docker, so it randomly assign a tag for it. So it becomes a random assignment. Now
+if you check, either any machine is currently running or not, you just need to run docker ps. You
+see, just 38 seconds ago, I ran these two. And this docker container is basically running right now,
+and it has a container ID, and it has a container tag. And that specific identifier is the container
+ID. And this container ID is going to be different for everybody whenever you're running it into a
+local. So it's going to be different for you. even the container name is also going to be different
+for you. Now let's try to understand what are the contents over there in the specific tools and what
+specific functions that we need to run whenever we enter into this Docker container. See, you'll
+find lots of different files over there. Just forgot everything. These are the, this is not the
+things that you're interested on. You'll be mostly interested on SLI cube work. That is the file
+which has the executable tools that we're looking for. Just enter into the SLI cube. And you'll find
+a file called CubeSacMaster. Just enter into the CubeSacMaster. And you'll find the main application
+that the researcher or developer has designed to make this tool running. And here you'll find
+something called main.py. That means we are basically into the correct folder to run this tool right
+now. What should be the first step right now? Try to run this tool, main.py, and see what the tools
+basically produces. That is a very interesting part. So the tool is trying to analyze this specific
+folder, the test artifact, the folder that I mentioned earlier. And this specific folder has all of
+the artifact, which has the YAML extension. And in the first artifact, it has found one
+misconfiguration. In the second artifact, which is the nfs.server.yml, it has found three
+misconfiguration. Now we are going to go into the details what are the misconfigurations it has
+found. But let's try to figure out what are the misconfigurations out there. And this is another
+configuration, vernis.yml. It has found four misconfigurations. This it has found lots of different
+misconfigurations in the different YAML file. So tool is doing your job. Now what is our workshop is
+all about? In our workshop, we are going to give a zip file w4.zip you have to unzip it first then
+you have to run this tool. What is the tool? the python main.py against this w4 target directory. w4
+zip has more than 100.yaml files. So when the tool is running against this w4, it will figure out
+different misconfigurations and your task is to generate that misconfiguration. File.csv, the
+misconfiguration file will be generated in a extension called csv. So your output should be
+output.csv. And then you have to submit that output.csv in canvas. But that's not the end of the
+assignment. This is the first part of the assignment there is also another second part of this
+assignment too. The second part of this assignment is you have to read this paper. This paper is
+published, I think, 2021. And for this specific paper, this tool is being designed. So these are the
+four developers who basically designed this tool. So we have Dr. Islam. He is a PhD student over
+here, but recently joined the Kennesaw State University as an assistant professor. Dr. Ravmal is
+currently over here as an assistant professor. And that is another professor, Bosch. He's from the
+Virginia Tech. And Mr. Pandit from the GitHub. And there you need to read this paper. Mostly this
+paper is going to be little. Let me download this paper and open this for you. The most interesting
+section you're going to be reading is section 2.3. section 2.2, methodology to identify the security
+misconfiguration categories. Then read forward section 2.3 you will find the answer to the research
+question 1 and in the answers to the research question 1 they have reported different kinds of
+misconfiguration categories. Since this CSV file going to be reporting you misconfigurations like
+this. This is the CSV file that the tool is going to be producing for you. See, it has gone through
+this specific directory. It is saying that I have evaluated that specific artifact chart.veloz.yml
+and I have found, tried to identify these eight categories of the misconfiguration. What are those
+eight categories? The first category is within the manifest secret. It has said that I didn't find
+anything like relevant to that category. into the config into this specific configuration file. And
+then it will try to look for the valid 10th secret misconfiguration. Then it will go for say count
+over privilege misconfiguration but something interesting has happened over here. You see, for the
+first it artifact it didn't find any misconfiguration. But if you go to the second artifact, you'll
+find a misconfiguration called insecure HTTP. That means, somehow, You should be designing your
+application for abc.com and there should be HTTPS, that means secure communication, but somehow you
+missed this S and it becomes a plain text. What will happen if the Facebook is written like this?
+Suppose if you go to the Facebook, you'll automatically find that this HTTPS is enforced. But what
+if the HTTPS is not enforced? Then you're using the username, ABC. You're using the password, I1234.
+If somebody is hacking your system, or suppose this is the hacker, is trying to see what kind of
+password that you are typing into your Facebook login, it will automatically find the whole password
+into the plain text. That means the password is not being encrypted or encoded. But when you are
+enforcing the HTTPS, anything you are typing into this field, everything becomes encoded or
+encrypted. So that's why the HTTPS is automatically enforced into your system. But somehow, for that
+specific artifact it has found that the HTTPS is not being enforced. So that is a communication,
+that is a misconfiguration that you should figure out. And it also has find another
+misconfiguration. They call it the no rolling update. So you don't need to understand the details of
+the what kind of misconfigurations these are. Just try to read the section 2.3. There you'll find
+out what does each of these misconfiguration means. So if you read the section 2.3, you'll
+understand what does it mean by the absent resource limit, what does it mean by absent security
+context activation of the host IPC, activation of the host network. Yes, to become a master of the
+Kubernetes, even to understand the Kubernetes 1.0.0, 1.0.1, that means the first part of the
+Kubernetes, you need to understand what the Kubernetes is. Since this course is not related to the
+Kubernetes for now, but in future, you'll understand. So I need to learn more about the Kubernetes,
+then you can simply search the Kubernetes 1.0.1, and you'll find the details of what you should be
+learning. But this is the starter. So here they mentioned about the eight different, I think, 12
+different misconfigurations, 11 different misconfigurations. So you must have to read the section
+2.3 to understand what is the context behind this misconfiguration, what this misconfiguration is
+trying to say. let's go to the second part of this application. So the first part, you have to run
+this C and look at the output file generated by the tool into the SLA cube work directory. if you go
+back to your tool, you'll find folder call like this, a file call. That is the file that is being
+generated when you run this tool demo output dot csv so that this is the file that you have to put
+into the canvas. But for your cases, you can define a file, a completely different name. The output
+file is a csv that has multiple columns. So that image, as i already have shown you the it has
+multiple columns inside it. That means multiple different misconfigurations is being reported by
+tool. Then the first two columns correspond to the directory and the path of the artifact. The rest
+correspond to the count of the instances for a specific category. You'll use this count to determine
+the most three frequent ones. That means now we have the 11 different categories of the
+misconfiguration reported by this tool. But your task is to identify what are the three most
+frequent misconfigurations being reported by this tool. Okay? So that is the question that we are
+looking to answer. Three most frequent misconfiguration that is being reported to this file. And for
+that, you have to go through the csv file again and trying to check, okay, what could be the
+potential three most frequent misconfiguration? You see a number over here, four. So that could be a
+potential candidate. Let's see what is this category belongs to. within manifest secret. So that is
+a potential candidate because it has a higher number compared to the R. Now let's see if there is
+any other. Then we have found something called 2. That means that could be another potential
+misconfiguration in the top 3 category. Let's see if we can find something larger than these
+numbers. We also have found two So you have to manually go through this CSV file and try to figure
+out what are the three most frequent misconfigurations that is being reported. Or something
+interesting could happen. What could be interesting over there? bring your agentic AI into your
+system and ask him the question, feet. Now it is going to read this CSV file for you and try to
+report back what is the three most misconfiguration files is being. So there DG is an agent tool
+that is designed by me. So you are not going to have this tool by yourself, but you can use any
+other contest for you. Now it is showing that, okay, I have figured out the three potential most
+frequent misconfiguration. What is the first number? No network policy. It is saying that I have
+found the no network policy 28 times when I was surfing through the CSV file that is being
+generated. So that is one of the most frequent misconfiguration. Now if we go through the paper to
+understand what does it mean that... No network policy. You'll find this something the activation of
+the host network or something else or policy related to the something like or if you really don't
+understand what does it mean by the no network policy you can even ask what does it mean by no
+network policy. Or there are some open source tools that you can use. What are the tools? I think
+all of you are familiar with the Gemini. You have the Gemini CLI installed into your local machine.
+It's not just trying to install the Gemini. Gemini will exactly do the same stuff that Gigi is going
+to do over here. Since Gigi is not still being open source, so I'm designing these things for any
+kind some upcoming conferences or something else so you can even try this Gemini Gemini will get the
+contest of the CSP Yes. You can even ask the Gemini multiple number equations. What is the question
+that I asked earlier? That is the question. Let's copy and paste the question over here. it is also
+going to give the same answer. Even you can try if you have the cloud version subscription. Even you
+can ask the same questions to you. So that is called some kind of vibe coding. The advanced
+techniques that you're going to be using in the 2026 or not into 2027 or 2028. And that's how the
+things become easy and things become fast. Instead of putting this file into the GPT, everybody does
+it. How differently you do the things by yourself. That means you're trying to bring the whole
+agentic solution into our terminal, into our local, so the local can read these files, can see what
+is the file structure, could help you understand everything that you're going to need based on the
+file structure. So you're going to simply put him that, okay, so this is the demo.output.csv. I
+really don't understand what is this file is all about. Could you please help me understand? Then
+you can also ask him, okay, into the demo.output.csv, there's a misconfiguration called no sec
+contest. Would you please highlight in which artifact this misconfiguration is being reported? She's
+going to give you everything. So Gemini is still loading the file. The solution that I have built is
+a little bit faster here. So that is the hands-on in-class experience that we have over here at your
+home. What you have to do, you'll find a file called w4.zip. This is the file. First, download this
+file, unzip this file, then go to the main.py. And if you go to the main.py, now you have to find
+something called, this is hard-coded. Initially, the main.py has these two lines. That means it is
+hard-coded for the demo simulation, the test artifact. Here, you have to, when you unzip the w4.zip
+file, it will unzip into a folder called k-test-artifact. So that means you are now setting a new
+target, a new directory that these tools will be running against this specific directory, not the
+directory that we just ran. then you save the result into the w4result.csv and you have to submit
+the w4result.csv into the canvas at the same time. Try to give me the answer of the three most
+frequent misconfigurations being reported into this csv file. The report should not be more than one
+page. You can write the report into the txt file or pdf file or the doc file, doesn't matter for me.
+Just write the report, make sure the report doesn't extend beyond the one page, 300 word. So that is
+the two deliverables that we have found this workshop for. And that workshop was to respond in the
+earlier courses, earlier classes in 2024 and 2025, one of the easiest part of this software quality
+assurance, the lab assignment. So that is something very easy. You just need to run three to four
+different commands. let me recap the course class again. So you have to first run this command,
+docker pull, to pull the tool into a local. Then you have to verify whether the tool is really being
+downloaded. Then you have to run this tool. The tool automatically runs into this specific
+directory, which is hard-coded. Then you will find something called demo.csv that is being generated
+by this tool. Then you have to download the w4.zip. You have to unzip it. Then you unzip it, you'll
+find the folder called k8s artifact. You have to modify the main.py file with the path of this
+artifact. It can be anything path for you. So for me, this is under the slash workshop. So if you
+simply unloaded it, it could be something like this for you. Or it could be your name. anything that
+means why you have downloaded this or unzipped or extracted this file. So slash workshop is not
+mandatory. But that is mandatory okay it is artifact and w for result dot csv. And final daily
+variables are two files. The first file is a csv file and the second file is the three most frequent
+vulnerabilities or misconfigurations being reported. So see what the Gemini returns for us. Gemini
+is very slow. Even the cloud is better. So cloud reads the file, and it's already making a table for
+you. So it's saying that, OK, these are the three most common misconfigurations that I have found
+for you. There are no network policy. Even the tools that we have designed, it's also saying that
+there are no network policy. But see, each of these tools is saying the count differently. It is
+saying that the count is 28. Gemini Clouding is also saying the count is 28. So that is consistent.
+Let's see how the Gemini is reporting. Gemini is reporting the 28. Each of these tools is counting
+the misconfigurations correctly. Many of the cases you'll find the tools are not that good to
+exactly give the correct numeric number. So in that specific cases, you have to manually check
+whether the number 28 is exactly the number it should be. So I have to manually check for my eyes.
+So that is a, I think this is still going on. Tim and I. I think that's all for this class. Whether
+I didn't introduce myself, I'm a PhD student over here. This is my second year. I'm doing the PhD in
+Computer Science and Software Engineering. But before joining in the Auburn, I was a part of the
+Oracle as a level three senior solution and cloud architect. I always have a passion after
+completing this PhD. I think it will take another two and a half years or three years to going back
+to Oracle again. So I have around six to seven years of experiences in the Alipay and the Oracle.
+Even I'm working with Dr. Dozier over here in some kind of... You know the Obby? We are trying to
+design something, an AI reality version of the Obby, a female version. And you're going to see it
+after March 3. A big announcement is going to come for the Auburn University portal, that something,
+an AI avatar is being generated for Auburn University. And people can talk to it. Talk to Hari. It's
+a Har. And it's a very beautiful name. I'm not going to reveal the name right now, but it's
+something connected to the Aube. So that could be the next Aube for the Auburn University history.
+And we got the opportunity, me and the two other persons, are basically working on this project, and
+the project is mostly completed. And on the March 3, there is an upcoming AIU conference in the
+Melton Student Center. They're going to introduce that specific avatar to everybody. OK, thank you.
+If you have any questions or something, anything related to this course or any career advice that
+you might want for me to answer for you, you can reach out to me in the LinkedIn. I've been
+available in the LinkedIn all the time. Or you can also connect me. into our Harvard mill. I'm
+always there for you.
