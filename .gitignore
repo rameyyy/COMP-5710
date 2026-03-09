@@ -2,5 +2,5 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
-*.csv
+# *.csv
 test_results.txt

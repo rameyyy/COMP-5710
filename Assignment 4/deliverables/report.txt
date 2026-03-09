@@ -1,0 +1,42 @@
+COMP 5710
+Assignment 4
+Clay Ramey
+
+Workshop 4 Report - Security Misconfigurations in Kubernetes Manifests
+
+For this workshop, I used a tool called SLI-KUBE to scan a set of Kubernetes configuration
+files (YAML files) and find security misconfigurations. A security misconfiguration is basically
+a setting in a config file that is either missing, wrong, or unsafe in a way that could let
+someone attack or break into the system.
+
+After running the tool against the w4 dataset, it scanned 40 YAML files and generated a CSV
+file with the results. Looking through the output, I found the three most common
+misconfigurations reported by the tool.
+
+
+The 3 Most Frequent Misconfigurations:
+
+1. NO_NETWORK_POLICY (37 instances)
+This was by far the most common issue found. This misconfiguration is about not specifying
+network policies in the configuration files. Without network policies set up, a Kubernetes
+installation is left open to unauthorized access, meaning people or programs that shouldn't
+have access to the system might be able to get in.
+
+2. INSECURE_HTTP (10 instances)
+This misconfiguration is about using plain HTTP instead of HTTPS (which uses SSL/TLS
+encryption) when setting up URLs or sending data between parts of the system. When HTTP is
+used without encryption, the data being sent is in plain text. This makes it easy for an
+attacker to intercept and read that data, which is called a man-in-the-middle attack.
+
+3. NO_ROLLING_UPDATE (10 instances)
+This misconfiguration is about not specifying a rolling update strategy in the configuration
+file. Rolling updates let you update an application gradually without taking the whole thing
+down at once. Without it, the system is more vulnerable to supply chain attacks, where
+someone sneaks in malicious code during an update.
+
+
+Summary:
+Out of all the misconfigurations the tool found, the most common problem was that network
+policies were not defined. This was found 37 times across the dataset, which is more than
+triple the second most common issue. Insecure HTTP and missing rolling update settings were
+tied for second, each showing up 10 times.
