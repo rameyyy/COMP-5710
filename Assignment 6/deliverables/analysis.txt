@@ -1,0 +1,61 @@
+Assignment 6
+COMP-5710
+Clay Ramey
+Repo: https://github.com/rameyyy/sqa-w6
+
+
+Adding Test Cases for B and C
+
+For this assignment I set up a GitHub Actions workflow that runs two scripts
+on every push. The first script is verification, which checks that every
+requirement in requirements.json has a test case. The second script is
+validation, which checks that all expected requirements from
+expected_structure.json actually exist in requirements.json.
+
+I added test cases TC-HAZ-001B and TC-HAZ-001C to test_cases.json to cover
+REQ-HAZ-001B and REQ-HAZ-001C.
+
+
+Build Success - Verification Only (Phase 1)
+
+In the first push I kept the Run Validation step commented out in the workflow
+file. Only verification ran and it passed because REQ-HAZ-001A was in
+requirements.json and had a matching test case. The build succeeded.
+Screenshots: phase1_verification_only_summary_SUCCESS.png, phase1_verification_only_steps_SUCCESS.png
+
+
+Build Failure - Validation Step (Phase 2)
+
+In the second push I uncommented the Run Validation step so it would run as
+part of the pipeline. The build failed at that step. The error log showed that
+REQ-HAZ-001B and REQ-HAZ-001C were missing from requirements.json. The
+validation script compares requirements.json against expected_structure.json,
+which expects A, B, and C. Since only A was there, the script exited with an
+error and GitHub Actions marked the build as failed.
+Screenshots: phase2_validation_missing_reqs_summary_FAILURE.png, phase2_validation_missing_reqs_error_log_FAILURE.png
+
+
+Updating Requirements and Build Success - Verification and Validation (Phase 3)
+
+To fix the failure I added REQ-HAZ-001B for chemical hazards and REQ-HAZ-001C
+for physical hazards to requirements.json. Both already had matching test cases
+in test_cases.json so verification still passed. After pushing that change
+both scripts passed and the build succeeded.
+Screenshots: phase3_verification_and_validation_summary_SUCCESS.png, phase3_verification_and_validation_steps_SUCCESS.png
+
+
+Analysis of Build Failure and How It Was Solved
+
+The build failed because the validation script found that requirements.json
+was missing REQ-HAZ-001B and REQ-HAZ-001C. These were required according to
+expected_structure.json but were never added to requirements.json. The script
+exited with an error code which caused GitHub Actions to fail the build.
+
+The fix was straightforward. Adding the two missing requirements to
+requirements.json gave the validation script what it expected. On the next
+push both verification and validation passed and the build was green.
+
+This showed how CI helps catch problems early. The missing requirements would
+not have been obvious without the validation step running automatically. Once
+it was part of the pipeline, the problem showed up right away on the next
+push and was easy to fix.
