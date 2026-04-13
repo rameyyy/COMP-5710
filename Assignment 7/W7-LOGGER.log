@@ -1,0 +1,16 @@
+2026-04-13 16:10:04,677:readData: Loading Iris dataset from sklearn.datasets
+2026-04-13 16:10:04,694:readData: Dataset loaded successfully — shape: (150, 4), target shape: (150,)
+2026-04-13 16:10:04,708:makePrediction: Loading Iris dataset for KNN classifier
+2026-04-13 16:10:04,715:makePrediction: KNN prediction result for inputs [[5.9, 1.0, 5.1, 1.8], [3.4, 2.0, 1.1, 4.8]] -> [1, 1]
+2026-04-13 16:10:04,716:doRegression: Loading diabetes dataset for linear regression
+2026-04-13 16:10:04,780:doRegression: Trained regression — coefficient: [938.23786125], intercept: 152.91886182616113
+2026-04-13 16:10:04,780:k_fold_cv_mlp: Starting 5-fold cross-validation on Iris dataset
+2026-04-13 16:10:05,666:k_fold_cv_mlp: Fold 1 accuracy: 1.0000
+2026-04-13 16:10:06,250:k_fold_cv_mlp: Fold 2 accuracy: 1.0000
+2026-04-13 16:10:06,609:k_fold_cv_mlp: Fold 3 accuracy: 0.8333
+2026-04-13 16:10:07,163:k_fold_cv_mlp: Fold 4 accuracy: 0.9000
+2026-04-13 16:10:07,559:k_fold_cv_mlp: Fold 5 accuracy: 0.8000
+2026-04-13 16:10:07,559:k_fold_cv_mlp: Mean accuracy across 5 folds: 0.9067
+2026-04-13 16:10:07,560:doDeepLearning: Loading MNIST dataset via keras.datasets.mnist
+2026-04-13 16:10:08,529:doDeepLearning: MNIST loaded — train shape: (60000, 28, 28), test shape: (10000, 28, 28)
+2026-04-13 16:10:51,792:doDeepLearning: CNN predictions (first 5): [7, 2, 1, 0, 4] | Ground truth: [7, 2, 1, 0, 4]
