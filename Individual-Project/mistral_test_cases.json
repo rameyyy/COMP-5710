@@ -1,0 +1,67 @@
+[
+  {
+    "test_case_id": "TC-LLM-MIS-001",
+    "requirement_id": "REQ-117.130-001B",
+    "description": "Verifies that the system identifies known hazards according to FDA food safety regulations (21 CFR 117.130)",
+    "input_data": "A list of known hazards for a specific food product",
+    "expected_output": "The identified hazards are correctly listed and categorized in the system",
+    "steps": [
+      "Load the known hazards list for a specific food product into the system",
+      "Run the hazard identification process using the loaded data",
+      "Compare the output of the hazard identification process with the expected hazards list"
+    ],
+    "notes": "Assumption: The system is properly configured and functioning as intended. Special condition: Test should be conducted by a trained professional familiar with FDA food safety regulations."
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-002",
+    "requirement_id": "REQ-117.130-001F",
+    "description": "Verifies that the hazard analysis is written and accessible as per 21 CFR 117.130",
+    "input_data": "Hazard Analysis document",
+    "expected_output": "A written Hazard Analysis document",
+    "steps": [
+      "Retrieve the Hazard Analysis document from the system or repository",
+      "Verify that the document is in a readable format (e.g., PDF, Word)",
+      "Review the document to ensure it contains a written hazard analysis"
+    ],
+    "notes": "Assumption: The Hazard Analysis document has been properly created and stored within the system or repository"
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-003",
+    "requirement_id": "REQ-117.130-002A",
+    "description": "Verifies that the food safety management system identifies and controls biological hazards as per FDA regulations.",
+    "input_data": "Sample of raw materials, work environment swabs, finished product samples",
+    "expected_output": "Documented identification and control measures for identified biological hazards",
+    "steps": [
+      "Collect samples from raw materials, work environment, and finished products",
+      "Analyze the collected samples using appropriate testing methods to identify potential biological hazards",
+      "Review the food safety management system's records to ensure that control measures are in place for identified biological hazards"
+    ],
+    "notes": "Assumes that appropriate testing methods and food safety management system are available. Special conditions may include changes in raw materials, work environment, or finished products."
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-004",
+    "requirement_id": "REQ-117.130-003A1",
+    "description": "Verify the assessment of severity and probability of hazard occurrence in accordance with 21 CFR 117.130",
+    "input_data": "Food safety hazards identified during risk analysis",
+    "expected_output": "Documented assessments of severity and probability for each identified hazard",
+    "steps": [
+      "Identify food safety hazards through a risk analysis process",
+      "Assess the severity of each identified hazard based on its potential to cause illness or injury",
+      "Assess the probability of each identified hazard occurring during food production, processing, or distribution"
+    ],
+    "notes": "This test assumes that the food safety risk analysis and assessment methods comply with FDA regulations (21 CFR 117.135)"
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-005",
+    "requirement_id": "REQ-117.130-003A2",
+    "description": "Verify the evaluation of environmental pathogens for ready-to-eat foods",
+    "input_data": "Samples of ready-to-eat food products and their corresponding environmental samples",
+    "expected_output": "Results indicating the presence or absence of specified environmental pathogens in the ready-to-eat food samples",
+    "steps": [
+      "Collect samples of ready-to-eat food products and their corresponding environmental samples",
+      "Perform testing to identify the presence of environmental pathogens using approved methods",
+      "Analyze test results to determine if they meet regulatory requirements"
+    ],
+    "notes": "Assumption: Testing is performed by a qualified laboratory following FDA guidelines and standards"
+  }
+]

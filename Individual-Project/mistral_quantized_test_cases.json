@@ -1,0 +1,67 @@
+[
+  {
+    "test_case_id": "TC-LLM-MIS-001",
+    "requirement_id": "REQ-117.130-001B",
+    "description": "Verify that the system identifies known hazards.",
+    "input_data": "A list of known hazards.",
+    "expected_output": "The system correctly identifies all known hazards in the input data.",
+    "steps": [
+      "Input the list of known hazards into the system.",
+      "Verify that the system has identified all known hazards in the input data.",
+      "Review the system's output to ensure that it matches the expected output."
+    ],
+    "notes": "<none>"
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-002",
+    "requirement_id": "REQ-117.130-001F",
+    "description": "Verify that a hazard analysis is written",
+    "input_data": "<none>",
+    "expected_output": "Hazard analysis document exists and is complete",
+    "steps": [
+      "Check if the hazard analysis document exists in the specified location.",
+      "Verify that the hazard analysis document contains all required elements (e.g., process flow diagram, potential hazards, controls, monitoring procedures).",
+      "Confirm that the hazard analysis document is up-to-date and has been reviewed by a qualified person."
+    ],
+    "notes": "<none>"
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-003",
+    "requirement_id": "REQ-117.130-002A",
+    "description": "Verifies that the system can identify and prevent biological hazards.",
+    "input_data": "Sample food product",
+    "expected_output": "System identifies and prevents biological hazards in sample food product.",
+    "steps": [
+      "Input a sample food product into the system.",
+      "Verify that the system identifies potential biological hazards in the sample food product.",
+      "Verify that the system takes appropriate actions to prevent biological hazards from contaminating the food product."
+    ],
+    "notes": "<Assumptions: The system has been properly configured and is functioning as intended.>"
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-004",
+    "requirement_id": "REQ-117.130-003A1",
+    "description": "Assess severity and probability of hazard occurrence",
+    "input_data": "Hazard identification report, risk assessment report, and process flow diagram for a food processing facility",
+    "expected_output": "A table that lists all identified hazards, their severity level, and probability of occurrence",
+    "steps": [
+      "Review the hazard identification report to identify all potential hazards associated with the food processing facility.",
+      "Use the risk assessment report to determine the likelihood of each hazard occurring.",
+      "Use the process flow diagram to map out the steps in the food processing facility and identify any potential points where the identified hazards could occur."
+    ],
+    "notes": "Assumptions: The hazard identification report, risk assessment report, and process flow diagram are accurate and up-to-date. Special conditions: None."
+  },
+  {
+    "test_case_id": "TC-LLM-MIS-005",
+    "requirement_id": "REQ-117.130-003A2",
+    "description": "Evaluate environmental pathogens for ready-to-eat foods",
+    "input_data": "Ready-to-eat food samples",
+    "expected_output": "Identification of environmental pathogens in the ready-to-eat food samples",
+    "steps": [
+      "Obtain ready-to-eat food samples from production line",
+      "Perform microbiological analysis to detect environmental pathogens",
+      "Compare the results with FDA guidelines for environmental pathogen detection in ready-to-eat foods"
+    ],
+    "notes": "Assumptions: The microbiological analysis is performed using validated methods and equipment. The FDA guidelines are up-to-date and applicable to the type of food being tested."
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "mistral": {
+    "coverage": 100.0,
+    "completeness": 100.0,
+    "correctness": 100.0
+  },
+  "mistral_quantized": {
+    "coverage": 100.0,
+    "completeness": 100.0,
+    "correctness": 100.0
+  }
+}
